@@ -1,0 +1,688 @@
+Python 3
+
+Input function - this function allows you to store a user’s input and recite it on the screen.
+
+A variable in python should start with a lowercase letter, there cannot be a number or capital letter starting off a variable. (No special characters allowed.) 
+Variables are also case sensitive, so if you have a capital letter somewhere in your variable, a different variable with the same letter can be written in lowercase. 
+You cannot use any keywords that are already built in python as your variable. Keep your python variables short as well!
+
+* my_var is different from my_Var.
+
+When assigning variables you can assign more than one variable at a time:
+
+	For example:
+		a = b = c = 10 → all of these variables (a,b,c) will be equal to 10.
+		a, b, c = 1, 2, 3
+			a = 1
+			b = 2
+			c = 3
+      
+If you want to check where your variable is stored in the memory of python, the function “id()” can do so.
+
+Data Types:
+
+“Strings”
+Numbers - Integers / Floating Numbers
+Booleans - True/False
+[ Lists ]
+Sets - sets are a list without any duplicates. Think of sets like the distinct clause in SQL.
+( Tuples )
+Ranges
+{ Dictionaries }
+
+Mutable data types include: lists, sets, dictionaries → can be changed after being used.
+
+Immutable data types include: strings, numbers, tuples, frozensets → cannot be changed after use.
+
+\ → this means there is a break in the code and each sentence or word will be placed on a new line. 
+Ex: Hello/how/are/you. (Each word would be on a separate line here in the code.)
+Inserting back-slashes in your code is called “escaping new line characters.” Used to avoid separations in your code!
+
+x % y → remainder of x / y
+
+abs(x) → absolute value or magnitude of x
+
+int(x) → x converted to integer
+
+float(x) → x converted to floating point
+
+pow(x, y) → x to the power y   (or)   x ** y → x to the power y
+
+len(x) → returns the number of elements (characters) in a data type.
+
+The World of Strings
+Ex:
+
+A = “running dog”
+
+A.index(“u”) = 1 → The index function allows you to locate where the element is, in the string. (How far down is the element in the sequence)
+
+A.count(“n”) = 2 → The count function counts the number of the same elements (characters) located in the string provided.
+
+A.find(“run”) = 0 → The find function will show you where the index to the word or group of letters you are looking for begins at. In the example, I was looking for “run”, the element “r” is the zero index, so using the fund function, zero was produced because that is where the index of the word I was looking for began at. *** When using the find function, if python does not find a match, then python will return the value, -1.
+
+A.lower() = lowercase → The lowercase function turns the whole string lowercase.
+
+A.upper() = uppercase → The uppercase function turns the whole string uppercase.
+
+* Since strings are immutable, you can add ".lower" or ".upper" to your variable and this will not change the original string you have written above. Keep that in mind, strings are not able to be altered.*
+
+A.startswith(“r”) = true → this function is a true or false statement, if the string starts with the letter you are looking for, then it is true. If not, then it is false.
+
+A.endswith(“h”) = fasle → this function is the inverse to the one above. In other words, since this function is the same as the one above, the same rules apply: if the string ends with the letter you are looking for, then it is true. If not, then it is false.
+
+B = “   running dog   ”
+
+B.strip() = “running dog” → If you want to remove the unnecessary spaces at the beginning and end of the string, then the strip function does the trick.
+
+B = “$$$running dog$$$”
+
+B.strip(“$”) = “running dog” → Similar to the example above, If you want to remove the unnecessary special characters at the beginning and end of the string, the strip function with an entry in the parentheses, does the trick.
+
+B = “   running dog   ”
+
+B.replace(“ ”, “”) = “runningdog” → the replace function allows you to remove all spaces in the string, including the one in between.
+
+B = “run, dog, happy, sad”
+
+B.split(“,”) = [“run”, “dog”, “happy”, “sad”] → the split function splits your string up, in other words, if you want to only see a piece of your string, then split and putting the value you want to see in the parentheses allows this to happen, or if you would like each element in the string to be divided up, the function does this as well.
+
+B = running dog
+
+*** If you want to put underscores in between all your strings elements, then you could use this:
+“_”.join(B) = ‘r_u_n_n_i_n_g_ _d_o_g’ ***
+
+String concatenation - means unifying two or more strings into a single string.
+
+Ex:
+
+>>X = bad
+>>Y = man
+
+>>X+Y = “bad man” → this is string concatenation, in other words just combining two strings together.
+
+>> x * 3 = “bad, bad, bad” → if you want to see the value of a string, repeated several times.
+
+>> X = “bad”
+>> “b” in X = True → This statement is a true or false statement, asking is the letter “b” in the X string, if it is, then the function is marked true, if not, then the function is marked false.
+
+>> “w” in X = False → Similar to the example above, this function is asking for the letter “w” in the X string, if it is, then the function is marked true, if not, then the function is marked false.
+
+>> The inverse to this function is:
+“W” not in X = True → As you see here, the function is asking to see if the letter “w” is not in the X string, if it is, then the function is marked true, if not, then the function is marked false.
+
+*** If you made a complex string, and want to keep the overall setup the same, but just change the number setup inside of it, you need to use the percent operator followed by s for string, d for digit, or f for floating point number.
+
+- %s is a placeholder for what will be expressed.
+
+- %d is a placeholder for what will be expressed.
+
+- %f is a placeholder for what will be expressed.
+
+Ex:
+“Hey 500XM, Bye 300, Yes 23.5”
+
+“Hey %a, Bye %b, Yes %c”  %  (“500XM”, 300, 23.5)
+>> “Hey 500, Bye 300, Yes 23.5000”
+→ In a complex string, the numbers in your string are replaced with variables!
+
+“Hey %a, Bye %b, Yes %c”  %  (“200XM”, 900, 1.5) → You can replace the numbers accordingly.
+>> “Hey 200, Bye 900, Yes 1.50000”
+
+“Hey %a, Bye %b, Yes %.4c”  %  (“200XM”, 900, 1.5) → You can limit floating numbers to a certain amount of zeros.
+>> “Hey 200, Bye 900, Yes 1.5000” → Less zeros in the solution compared to other solutions!
+
+
+Another complex string style that can be used when coding is format.
+
+“Hey {}, Bye {}, Yes {}”.format (“200XM”, 900, 1.5)
+>> “Hey 200, Bye 900, Yes 1.50000”
+
+This method can be used very effectively, if you want to change the numbers inside of your string.
+
+“Hey {0}, Bye {1}, Yes {2}”.format (“200XM”, 900, 1.5)
+>> “Hey 200, Bye 900, Yes 1.50000”
+
+“Hey {2}, Bye {0}, Yes {1}”.format (“200XM”, 900, 1.5) → Numbers can be changed, as you can see.
+>> “Hey 1.500000, Bye 200, Yes 900”
+
+
+F strings (Formatted string literals) → Another method for creating complex strings!
+
+Model = “500XM”
+Slots = 5
+IOS = 15.4
+
+F “Hey {Model}, Bye {Slots}, Yes {IOS}”
+>> “Hey{500XM}, Bye {5}, Yes {15.4}”
+
+F “Hey {Model}, Bye {Slots*2}, Yes {IOS}” → As you can see here, if you multiply the slots by 2, you see the answer in the solution below. F strings give you the opportunity to mutate strings accordingly. 
+>> “Hey{500XM}, Bye {10}, Yes {15.4}”
+
+F “Hey {Model.lower () }, Bye {Slots*2}, Yes {IOS}” → As you can see here, the model letters “XM” have been lowercase, due to the “.lower() function”
+
+>> “Hey{500xm}, Bye {10}, Yes {15.4}”
+
+Slicing - is when you take a portion of your string displayed.
+
+A = “abcdefg”
+
+A[1:4] → “bcd”
+A[:5] → “abcde”
+A[2:] → “cdefg”
+A[:] → “abcdefg”
+A[-5:-2] → “cdef”
+A[c] → 2
+A[3] → d
+A[:-4] → “abc”
+A[::2] → “aceg” → This is known as a step and it allows you to print each other character in a string. The syntax for step is: [start: stop: step]
+A[::-1] → “gfedcba” → This is the string in reverse order.
+
+Numbers and Booleans
+Num1 = 10
+Num2 = 20.5
+
+type(Num1)
+< class ‘integer’ >
+
+type(Num2)
+< class ‘floating’ >
+
+10 // 2 = 2 → This is known as integer division. This means the solution will not have a decimal (floating number) to follow. 
+
+10 ** 2 = 100 → (Raising to a power) Better known as powers and exponents. In this example, you see 10 raised to the power of 2.
+
+5 % 2 = 1 → This is known as modulo. Modulo, means finding out the remainder after the division of one number by another.
+
+< = ‘less than or equal to’
+> = ‘greater than or equal to’
+== ‘comparison of two values that are equal to each other.’
+!= ‘comparison of two values that are not equal to each other.’
+
+Which expressions have properties over others, the order is the following:
+
+   1. Raising to a power.
+
+   2. Multiplication, division, modulo
+
+   3. addition, subtraction
+
+int(1.7)
+>> 1
+
+float(1)
+>>1.0
+
+max(1, 2)
+>> 2
+
+min(1, 2)
+>> 1
+
+pow(3, 2)
+>> 9
+
+abs(5) → absolute value is thought of as the distance from zero in arithmetic.
+>> 5
+
+Boolean data types define only two possible values, TRUE AND FALSE.
+AND → both expressions need to be evaluated as true in order for the whole equation to be true.
+OR → either expression can be true in order for the whole expression to be true.
+NOT → used to negate an expression. Ex: not(1 == 1) → would be considered false, since it is negating a true expression.
+Lists
+
+[ ] → syntax used for lists.
+List1 = [ ]
+
+type(list1)
+<class ‘lists’>
+
+List1 = [“Hello”, “Bye”, “Good”, 15, 10, 3] → Each element is separated by a comma in the list example. You can tell list data structures because they all have square brackets [ ].
+
+len(list1)
+>> 6
+
+
+List1 = [“Hello”, “Bye”, “Good”, 15, 10, 3]
+
+List 1[1] = “Good”
+
+List 1[1] = “Sun” → This is how you update a list in python, bracket the index you want to be updated and type in what you would like to change it to on the opposite side of the equal sign.
+
+>> [“Hello”, “Bye”, “Sun”, 15, 10, 3]
+
+
+List1 = [“Hello”, “Bye”, “Good”, 15, 10, 3]
+
+List1. append(100) → the append method allows you to add something to the end of the list above. For example, the “100” after append above was added to the list as you can see below.
+
+List1 = [“Hello”, “Bye”, “Good”, 15, 10, 3, 100]
+
+
+List1 = [“Hello”, “Bye”, “Good”, 15, 10, 3]
+
+List1.pop[0] → This method removes the index of an element in the string.
+>> “Hello”
+List1 = [“Bye”, “Good”, 15, 10, 3]
+
+
+List1 = [“Hello”, “Bye”, “Good”, 15, 10, 3]
+>>List1.remove(“Hello”) → This method removes the element in the string.
+List 1 = [“Bye”, “Good”, 15, 10, 3]
+
+
+List1 = [“Hello”, “Bye”, “Good”, 15, 10, 3]
+List1.insert(2, “Happy”) → This method allows you to insert an element in a particular index.
+>> [“Hello”, “Bye”, “Happy”, “Good”, 15, 10, 3]
+
+List1 = [Hey, Bye, 3]
+List 2 = [4, 5.3, 6.1]
+>> list1.extend(list2) → [Hey, Bye, 3, 4, 5.3, 6.1]
+
+
+
+List1 = [Hey, Bye, 3]
+list1.index(3) → The index method tells where the element is located in the list.
+>> 2
+
+
+List1= [67, 34, 56, 6]
+List1.sort() / sorted(List1) → This method puts the string in ascending order.
+>> [6, 34, 56, 67]
+
+List1.reverse() → This method puts the string in reverse order.
+>> [67, 56, 34, 6]
+
+Sets
+
+{ } → syntax used for sets.
+
+Sets are lists with no duplicate elements.
+
+SIDE NOTE:
+if you try to add a duplicate element using the "Set" by attaching the add/append function to it, it will not add the element to the list because sets do not allow for duplicates. This is not an error in Python, but it will not go through.
+
+A = [1, 2, 2, 3, 3, 4, 4,]
+Set(A) → When adding the set data structure to list, all of the duplicates are taken away, as you can see.
+>> {1, 2, 3, 4}
+
+A = {1, 2, 3, 4}
+A.add(16) → To add an element in the set.
+>> {1, 2, 3, 4, 16}
+
+A = {1, 2, 3, 4}
+A.remove(2) → To remove an element in the set.
+>> {1, 3, 4}
+
+A= {1, 2, 3, 4}
+B = {2, 8, 6, 7}
+
+A.intersection(B)
+>> 2
+B.intersection(A)
+>> 2
+
+A.union(B)
+>> {1, 3, 4, 6, 7, 8}
+
+Tuples
+
+( ) → syntax used for tuples.
+
+Tuples have a fixed length.
+
+When using tuples with single elements, it is important you add a comma after the element to show it is a tuple. Ex: my_tuple = (9) → the data type presented here would be an integer. But, if a developer adds a comma at the end of the element, it becomes a tuple data type as follows: Ex: my_tuple = (9, )
+
+Think of tuples as immutable lists.
+(a ,b , c) = (1, 2, 3)
+
+a= 1
+b= 2
+c= 3
+
+You can also map variables to each other when working with tuples. It is also known as tuple packing or unpacking.
+Ex: var1 = (“Cisco”, “2600”, “50”)
+(“Hello”, “Goodbye”, “Wakeup”) = var1
+
+Both lines of code with be equal to each other! Cisco = Hello, 2600 = Goodbye, 50 = Wakeup
+
+*Dir function shows all the possible operations or methods that can be done with a data type. Very useful, if you would like to know all of the possible options you can use when working with a data type.
+Dictionary
+
+{ } → syntax used for dictionaries.
+
+A dictionary is an unordered set of key-value pairs, separated by a comma and enclosed by curly braces.
+
+*The elements on the left side of the colon are keys, while the elements on the right side of the colon are values. Each key has a value associated with it. The keys and values put together are considered to be a dictionary, are also known as an item.
+
+Dict1 = {“boy”: “girl”, “model”: “2600”, “IOS”: “12.5”, “ports”: “4”}
+
+As you can see, each dictionary element consists of a key, a colon and a value, followed by a comma.
+
+
+Dict1 = {“boy”: “girl”, “model”: “2600”, “IOS”: “12.5”, “ports”: “4”}
+
+If you want to add a value in a dictionary, curly braces, you need to:
+>> Dict1(“Ram”) = “128”
+
+Dict1 = {“boy”: “girl”, “model”: “2600”, “IOS”: “12.5”, “ports”: “4”, “Ram”: “128”}
+
+
+If you want to get rid of a value in a dictionary, then you need to:
+Dict1 = {“boy”: “girl”, “model”: “2600”, “IOS”: “12.5”, “ports”: “4”, “Ram”: “128”}
+>> del Dict1[“Ram”] → to delete an entry in the dictionary, all you need to do is enter the first part of the element.
+
+>> Dict1 = {“boy”: “girl”, “model”: “2600”, “IOS”: “12.5”, “ports”: “4”}
+
+To change a value that is already in the dictionary, you need to:
+Dict1 = {“boy”: “girl”, “model”: “2600”, “IOS”: “12.5”, “ports”: “4”}
+>> Dict1[“model”] = “2500” → This is a method used to change values in dictionaries.
+
+>> Dict1 = {“boy”: “girl”, “model”: “2500”, “IOS”: “12.5”, “ports”: “4”}
+
+To find the corresponding value of another value in the dictionary, you need to:
+
+Dict1 = {“boy”: “girl”, “model”: “2600”, “IOS”: “12.5”, “ports”: “4”}
+Dict1[“boy”] → entering in half the value of the element, the solution will give you the other half.
+>> “girl”
+
+To determine the number of key value pairs inside the dictionary, use the “len function”.
+
+Dict1 = {“boy”: “girl”, “model”: “2600”, “IOS”: “12.5”, “ports”: “4”}
+len(dict1) = 4  → this function carries a total of four key value pairs.
+
+The first part of a dictionary key value pair is the “keys”.
+
+The second part of a dictionary key value pair is the “values”.
+
+For example, Dict1 = {“boy”: “girl”, “model”: “2600”, “IOS”: “12.5”, “ports”: “4”}
+
+The keys in Dict1, are as follows:
+[boy], [model], [IOS], [ports]
+
+For example, Dict1 = {“boy”: “girl”, “model”: “2600”, “IOS”: “12.5”, “ports”: “4”}
+
+The values in Dict1, are as follows:
+[girl], [2600], [12.5], [4]
+Enumerate function
+	This function returns the index and variable value back in your solution.
+	Ex:
+		Vendors = [“Cisco”, “Bravo”, “Charlie”, “Delta”]
+		
+		Enumerate (vendors)
+		0 Cisco
+		1 Bravo
+		2 Charlie
+		3 Delta
+
+Data Type Conversions:
+	If you want to convert a data type to a string, all you need to do is write this line of code:
+		
+Num1 = “50”
+Num2 = int(num1)
+Num2’s output would now be 50. The data type would be switched to an integer.
+	
+	Data Type Conversions:
+Str = String data type
+Int = Integer data type
+Float = floating number data type
+
+Nested loops bring (if, for, while loops) together, by indenting them in your code.
+*You should not have more than 3 indentations in your code, when creating a nesting loop.
+Add parentheses in your code to make computation more cleaner to look at.
+
+Z += 1 		→ 		Z = Z +1
+
+When writing several lines of code, using a for statement or if/then statement, in order for the statement to connect and run properly, you need to add colons in your code. ‘ : ’
+
+When using the break statement in your code, it will only terminate the execution of the innermost loop, not all of the loops. So, if you have a line of code above the break statement, it will only apply to the line of code that is above that one. In other words, the line of code that is above, above the break statement is what will be affected when applying this statement. All other lines of code will run.
+
+The continue statement in your code is very similar to the break statement in your line of code. The only difference is the break statement ends your code wherever you need the code to break at, everything after the break is not included, the continue statement includes everything after the break. 
+
+In other words, if my code populated a string of numbers as such; 10 - 20 - 30 - 40. And I had a break statement applied to the number 20, the numbers 20, 30, and 40 would not show up in my code, it would just stop at 10. The continue statement allows the numbers 10, 30, and 40 to show up in my code; simply put, continuing my code breaking off the number 20.
+
+The pass statement is the equivalent of doing nothing with your code, it is used as a placeholder for pieces of code, and it gives you the ability to return back to syntax you have set up from the past and you did not feel like running it at that particular time.
+
+Again, this statement does absolutely nothing, but it helps keep your syntax valid, so you do not get an error message returned back. Unfinished code usually yields an error message back, so if you are unsure or do not know how to complete a code, or would like to go back to it, enter “pass” at an indented level under your code.
+
+In python you may encounter two different types of errors, syntax errors and exceptions. When you don’t follow python’s syntax and or you forget to add an indention, you get an error. Unlike syntax errors, exceptions are raised during the execution of the program interpreting the normal flow of the application. 
+
+The try statement checks for any exceptions in the code you have entered. If you have any exception errors in your code, then the exception statement is used to print out what needs to be shown, when an exception occurs.
+
+For example:
+
+For  i  in range(5):
+	Try:
+		print( i / 0)
+	Except ZeroDivision Error as e:
+		print( e, “ → Division by 0 is not allowed, sorry!” )
+
+As you can see here in this example, dividing any integer by zero will give you an error because zero cannot be divided by a number. So, since this example produces an exception, you wanted to alert python with your  try statement that every time zero is divided, print the except statement below it. In other words, instead of python producing an error message when you have an exception, you are able as a coder to tell python what you want printed if there is an error in your code, that is the power of the except statement. In the above code, “ → Division by 0 is not allowed, sorry!” would be printed because of the except statement instead of the error syntax message.
+
+If the code inside your indented try statement does not generate any type of errors, then python will move past the except statement as if it was not there.
+
+You can also add multiple except statements under your try statement to be extra cautious and cover any type of errors that may appear in your code. A common question when using the except statement is:
+
+What if I want to catch all possible exceptions that can be generated by the code located under the try statement?
+Well, you can just use the except statement alone, without specifying an exception name to be expected.
+
+Example:
+
+Try:
+	Print( i / 0)
+Except:
+	Print( error)
+
+This method is however not recommended because it just shows an error message and does nor establish the root cause of the error. It is better and way more efficient to label each exception statement by type of error as such:
+
+Try:
+	Print( i /0 )
+Except ZeroDivisionError:
+	Print ( “Division by 0 is just wrong!” )
+Except Name Error:
+	Print ( “Name Error detected!” )
+Except Value Error:
+	Print ( “Wrong Value!” )
+
+All of these exception statements for errors in your code can possibly be produced.
+
+When using the else statement in a line of code that includes a try and except statement, if there is no error in your try statement, the else statement will print and bypass the except statement.
+
+When the ‘finally statement’ is used, the line of code gets printed out, whether or not there is an error. 
+
+Example:
+
+Try:
+	Print: ( 4/ 0 )
+Except ZeroDivisionError:
+	Print: ( “ Not allowed” )
+Finally:
+	Print: ( “This line of code will be printed no matter!” )
+
+As you can see the line of code underneath the ‘finally statement’ will always be printed no matter what happens, if there is an error or not!
+
+# → to get rid of a line of code when writing a string of code, the pound key (#) gives you the ability to do so. In coding, to add a pound key to a line of code, it is known as commenting out a line of code, in other words, to erase the line of code from existence.
+
+There are several exceptions that can occur when writing your code, exceptions such as:
+Module Not Found Error - when there is no variable or grouping in your code that defines what you are looking for.
+Zero Division Error - when you are trying to divide an integer by zero.
+Name Error - when a variable in your line of code is not defined, in other words, the variable in your code does not equal a solution.
+Type Error - when an operation in your line of code cannot be performed. Like adding an integer to a string.
+Index Error - when a string of letters in your code does not match up the index you are looking for. In other words, if you are looking for the 20th character in your string, and your string is only composed of 5 characters. A = “Hello” / A [20]
+
+When running while statements (loops), if your code does not stop running:
+	>Press CTRL + C to get the code to stop.
+	> This is also known as the “Keyboard Interrupt” function when coding.
+
+If you run into an error or exception in Python, if you are in doubt on how you should fix an error, the first step every programmer does is copying the exception message below your line of code that is printed out in your command prompt. Then, paste the copied text into Google’s search engine. It is very likely you will end up on the “Stackoverflow.com” website, which is probably the best source of troubleshooting information for any programmer. Click on the first link and check on the replies to see if any of the answers resolve your issues.
+
+
+Functions
+
+To create a function you need a syntax as such:
+1	Def my_first_function():
+2		“This is our first function!”
+3		print(“Hello Python”)
+
+In this function, the first line of code is what is saved in Python. Python will recognize this line of code every time you write it and print the third line of code “Hello Python”. The second line of code is optional and is used to remind you of the reason you created the function in the first place, in other words, the purpose of the function. In this case, the purpose of this function is, it is our first function.
+
+1	Def my_first_function(x):	→ The “x” is the Parameter here because it is defined.
+2		“This is our first function!”
+3		print(x)
+
+4	my_first_function (“Hello Python”)	→ The “Hello Python” is the argument here because it is being called. The parameter was already defined in the python system as shown above.
+5		Hello Python
+
+*Parameters are what you use to define the function in the parentheses!
+*Arguments are what you use to call the function in the parentheses!
+
+Def my_first_function(x, y):
+	print(“Hello ” + x)
+	print(“Hello ” + y)
+
+>> my_first_function(“Python”, “Java”)
+	Hello Python
+	Hello Java
+
+Return Equations
+
+Def my_sum (x, y):
+	Sum = x + y
+	Return sum
+
+My_sum(1, 2)
+	3
+
+
+
+Def my_sum(x, y, z):
+	Sum = (x + y) * z
+	Return sum ** 2
+
+my_sum(1, 2, 3)
+	81
+
+Functions
+
+Positional arguments are functions that focus on the position of each index in the parentheses.
+For example, if:
+	Def my_first_function (x, y, z):
+
+When returning the function, you need to have three indexes to match each position above.
+In other words:
+	my_first_function(1, 2): → this would be an error in python because it does not satisfy all three of the indexes above.
+
+Namespace
+
+Three types of namespaces in Python:
+
+1 The built-in namespace - a variable that is placed into a function.
+2 The global namespace - a variable that is used throughout all of the python.
+3 The local namespace - a variable that is used only for one particular function.
+
+Parameters are what you use to define the function.
+Arguments are what you use to call the function.
+
+For loops execute a number of times depending on the sequence it iterates over, a while loop executes a piece of code as long as the user condition is evaluated as true. While loops will continue to run as long as the statement remains true, that means it is an infinite loop. Once the statement becomes false, it will come to an end!
+
+CTRL + C to end an infinite loop!
+
+Z += 1 is the same thing as Z = Z + 1
+
+Break - ends the nested loop wherever it is at.
+Continue - skips over a part in the function.
+Pass - does absolutely nothing, and leaves a blank. This is good for saving your program’s syntax over time.
+
+There are two types of errors in Python; syntax and exceptions.
+
+When working with functions, there are two types:
+Keyword functions
+Positional functions
+
+Positional functions look like this:
+
+Def my_fucntion(x,y,z):
+	function = (x+y) * z	→ Remember, these are the parameters!
+	return function
+
+>> my_function(1,2,3)	→ Remeber, these are the arguments!
+	(1+2)*3 = 9
+
+Keyword functions look like this:
+
+Def my_function(x,y,z)
+	function = (x+y) * z
+	Return function
+
+>>my_function(x = 1, y = 2, z = 3) → This is what makes a keyword argument different, the variables!
+	9
+
+Namesspaces
+
+Built-in functions look like this:
+	print(list(range(10)) → The list and the range functions are built-in functions.
+
+Global functions look like this:
+	My_var = 10	→ This would be a global function because it is defined outside of the function!
+	
+	Def my_fucntion()
+	My_var = 10	→ This would be a local function because it is defined in the function!
+	print(my_var)
+
+There is a trick that allows you to import an module and not have the outermost string printed out after you import the module. This trick is:
+	
+	If __name__== “__main__”:
+
+Using this line of code will allow you to do so. If you want more information on the trick, go to lecture #108.
+
+Path() and dir() are functions there to help you gain clarity on any module or functions you are uncertain about. They provide more information.
+
+If you ever want to install a module that is not built-in python already, you can do so by using pip package manager. This can be done in the command line by running this line of code:
+
+python -m pip install module name
+
+Whne opening files in your python script, the line of code that can be used is:
+
+	myfile = open(“D:\\routers.txt”, “r”)
+
+	“D:\\routers.txt” → is the path of the file.
+	
+“r” → how you want the file to be opened. In this case, it will be opened in a read-only view.
+
+“r” - reading (default mode)
+“w” - writing
+“a” - appending
+“b” - binary
+“x” - exclusive creation
+
+Lecture #116 talks about opening and reading Python files.
+
+/n = new line of code.
+/t = this will tab within each line of your code. In other words, indent the line.
+/u
+
+Bare in mind, when adding using the open function and adding a path to your text file, if there is any /n, /t, /u, this will cause exceptions to be raised in your code. To avoid this, you need to add double back slashes as such.
+
+Ex: D:\\Users\\Coding\\Trouble\\Routers.text
+
+Another way to avoid this issue is to use an alternative line of code:
+
+Ex: F = open(r “C:\coding\try.py”, “r”) → the “r” in front of the path for file tells python everything in the file is real and it avoids any exceptions.
+
+Quick Tips for opening, closing, writing, and reading files in Python:
+
+f = open(r “C:\coding\try.py”, “r”)
+
+f.seek(0) → This function should always be used before using the read function. The reason being is because it allows the developer to read the text in the python file from the beginning, instead of the end. Without using this function first, the read function will show a empty set.
+
+f.read() → This function shows what is present in the Python file.
+
+f.write() → This function allows you to write text in a Python file. But you need to open the Python file with the “w” disposition first. 
+
+f.close() → After you are typing writing in a Python file, it is imperative to close the file right after. If you do not so by using this function, the changes will not be saved.
+
+f.readlines()[1] → Readlines has the capability of going into your python file and choosing which line of code you want to be recited back to you. So in this example, the first line of one’s program will be produced in the output. 
+
+*f = open(r “C:\coding\try.py”, “a”) → The “a” or append function allows you to add more text or data in a file without erasing the existing data that is already placed into the file.
+
+By the way, there is a method for closing files automatically after opening them up. It is the with … as function.
